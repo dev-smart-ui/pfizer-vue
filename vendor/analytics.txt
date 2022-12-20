@@ -286,3 +286,55 @@ lider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
 12/16/2022 03:00:52 AM; event: tyk_journey; button_name: TYK_Q4_ANSWER_Button; action: Click; value: 1
 12/16/2022 03:00:52 AM; event: tyk_answers; action: submit; question_name: Question Four; answer_type: Slider; answer_unit: percentage; answer_correct_value: 83; answer_input_value: 0
 12/16/2022 03:00:53 AM; event: tyk_journey; button_name: TYK_Q4_AI_Button; action: Click; value: 1
+12/20/2022 08:09:49 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:09:57 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:10:19 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:10:19 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
+12/20/2022 08:10:21 AM; event: tyk_journey; button_name: TYK_Q1_AI_Button; action: Click; value: 1
+12/20/2022 08:10:24 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:10:25 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:35:12 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:35:16 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:35:20 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:35:20 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 4
+12/20/2022 08:35:23 AM; event: tyk_journey; button_name: TYK_Q1_NEXT_Button; action: Click; value: 1
+12/20/2022 08:35:25 AM; event: tyk_journey; button_name: TYK_Q2_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:35:25 AM; event: tyk_answers; action: submit; question_name: Question Two; answer_type: Slider; answer_unit: percentage; answer_correct_value: 35; answer_input_value: 0
+12/20/2022 08:35:26 AM; event: tyk_journey; button_name: TYK_Q2_AI_Button; action: Click; value: 1
+12/20/2022 08:35:29 AM; event: tyk_journey; button_name: TYK_Q2_NEXT_Button; action: Click; value: 1
+12/20/2022 08:35:33 AM; event: tyk_journey; button_name: TYK_Q3_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:35:33 AM; event: tyk_answers; action: submit; question_name: Question Three; answer_type: Slider; answer_unit: years; answer_correct_value: 7,8; answer_input_value: 3
+12/20/2022 08:35:37 AM; event: tyk_journey; button_name: TYK_Q3_NEXT_Button; action: Click; value: 1
+12/20/2022 08:35:40 AM; event: tyk_journey; button_name: TYK_Q4_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:35:40 AM; event: tyk_answers; action: submit; question_name: Question Four; answer_type: Slider; answer_unit: percentage; answer_correct_value: 83; answer_input_value: 0
+12/20/2022 08:37:21 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:38:25 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:38:30 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:38:39 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:38:41 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:38:57 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:38:58 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:39:10 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/20/2022 08:39:10 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 5
+12/20/2022 08:39:15 AM; event: tyk_journey; button_name: TYK_Q1_NEXT_Button; action: Click; value: 1
+12/20/2022 08:40:45 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:40:52 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 08:41:27 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 08:41:28 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:22:08 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:22:14 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:22:17 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:22:19 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:22:36 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: Tip
+12/20/2022 09:22:38 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: StudyDesign
+12/20/2022 09:22:41 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/20/2022 09:22:51 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:22:52 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:25:35 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:25:36 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:26:12 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:26:13 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:26:39 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:26:41 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 09:26:44 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/20/2022 09:26:46 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
