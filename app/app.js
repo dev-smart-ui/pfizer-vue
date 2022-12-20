@@ -6,15 +6,15 @@ const app = Vue.createApp({
             screen: false,
             pageEnd: false,
             loading: false,
-            leftCountQiestion: 3,
+            leftCountQuestion: 3,
             /**********/
             questionsList: [],
-            curentQuestionData: 0,
-            curentQuestionPosition: 0,
-            curentQuestion: 0,
+            currentQuestionData: 0,
+            currentQuestionPosition: 0,
+            currentQuestion: 0,
             questionStatus: true,
             controlSelectedData: 0,
-            curentGridSize: '',
+            currentGridSize: '',
             supportInfo: false,
             qOpacity: false,
             /**********/
@@ -46,10 +46,11 @@ const app = Vue.createApp({
     },
     /*********************************************************************************/
     components: {},
+
     /*********************************************************************************/
     mounted() {
-        this.beginApp()
         this.getDataFromWindow();
+        this.beginApp()
     },
     /*********************************************************************************/
     watch: {
@@ -95,15 +96,15 @@ const app = Vue.createApp({
         clickApp() {
             this.startTimer(true)
         },
-        editorGridSize(curent) {
-            if (this.questionsList[curent].gridSize == '%') {
-                return this.questionsList[curent].gridSize
-            } else if (this.questionsList[curent].gridSize == 'day' || this.questionsList[curent].gridSize == 'year') {
+        editorGridSize(current) {
+            if (this.questionsList[current].gridSize == '%') {
+                return this.questionsList[current].gridSize
+            } else if (this.questionsList[current].gridSize == 'day' || this.questionsList[current].gridSize == 'year') {
 
                 if (this.controlSelectedData == '1') {
-                    return ' ' + this.questionsList[curent].gridSize
+                    return ' ' + this.questionsList[current].gridSize
                 } else {
-                    return ' ' + this.questionsList[curent].gridSize + 's'
+                    return ' ' + this.questionsList[current].gridSize + 's'
                 }
             }
         },
@@ -117,11 +118,11 @@ const app = Vue.createApp({
             this.front = false;
             this.screen = true;
             this.startPull = true;
-            this.curentQuestion = 0;
-            this.controlSelectedData = this.questionsList[this.curentQuestion].indicatorBase
+            this.currentQuestion = 0;
+            this.controlSelectedData = this.questionsList[this.currentQuestion].indicatorBase
             this.curentGridSize = this.editorGridSize(0)
-            this.curentQuestionData = this.questionsList[0].indicatorBase
-            this.curentQuestionPosition = this.questionsList[0].basePosPersent
+            this.currentQuestionData = this.questionsList[0].indicatorBase
+            this.currentQuestionPosition = this.questionsList[0].basePosPerсent
             this.navigation = true
             this.pageLogo = true
             /**********************/
@@ -175,12 +176,12 @@ const app = Vue.createApp({
             this.startPull = false;
             this.startTimer(true)
         },
-        resetFn(curentQuestion) {
-            this.questionsList[curentQuestion].controlBaseData = this.curentQuestionData
-            this.questionsList[curentQuestion].basePosPersent = this.curentQuestionPosition
+        resetFn(currentQuestion) {
+            this.questionsList[currentQuestion].controlBaseData = this.currentQuestionData
+            this.questionsList[currentQuestion].basePosPerсent = this.currentQuestionPosition
             this.$refs.child1.startPos();
             /**********************/
-            let question = Number(curentQuestion) + Number(1)
+            let question = Number(currentQuestion) + Number(1)
             let btnName = 'TYK_Q' + question + '_RESET_Button';
             gtag('event', 'tyk_journey', {
                 'button_name': btnName,
@@ -202,14 +203,14 @@ const app = Vue.createApp({
                 });
 
         },
-        ansverFn(curentQuestion, ansver) {
+        answerFn(currentQuestion, answer) {
             setTimeout(() => {
                 this.supportInfo = true
                 this.questionStatus = false
-                this.curentGridSize = this.editorGridSize(curentQuestion)
+                this.curentGridSize = this.editorGridSize(currentQuestion)
             }, 300);
             /*******/
-            let question = Number(curentQuestion) + Number(1)
+            let question = Number(currentQuestion) + Number(1)
             let btnName = 'TYK_Q' + question + '_ANSWER_Button';
             gtag('event', 'tyk_journey', {
                 'button_name': btnName,
@@ -232,26 +233,26 @@ const app = Vue.createApp({
 
             /****************/
             let qType = 'Slider';
-            if (curentQuestion == 0) { //answer 1
+            if (currentQuestion == 0) { //answer 1
                 var qName = 'Question One';
                 var aUnit = 'days';
                 var correctValue = '3';
-                var inputValue = ansver;
-            } else if (curentQuestion == 1) {//answer 2
+                var inputValue = answer;
+            } else if (currentQuestion == 1) {//answer 2
                 var qName = 'Question Two';
                 var aUnit = 'percentage';
                 var correctValue = '35';
-                var inputValue = ansver;
-            } else if (curentQuestion == 2) {//answer 3
+                var inputValue = answer;
+            } else if (currentQuestion == 2) {//answer 3
                 var qName = 'Question Three';
                 var aUnit = 'years';
                 var correctValue = '7,8';
-                var inputValue = ansver;
-            } else if (curentQuestion == 3) {//answer 4
+                var inputValue = answer;
+            } else if (currentQuestion == 3) {//answer 4
                 var qName = 'Question Four';
                 var aUnit = 'percentage';
                 var correctValue = '83';
-                var inputValue = ansver;
+                var inputValue = answer;
             }
             gtag('event', 'tyk_answers', {
                 'action': 'submit',
@@ -281,7 +282,7 @@ const app = Vue.createApp({
 
         },
         selectedDataFn(data) {
-            this.controlSelectedData = data
+            this.controlSelectedData = data;
         },
         /** modals **/
         startPullFn() {
@@ -370,11 +371,11 @@ const app = Vue.createApp({
                     }
                 });
         },
-        additionalFn(curentQuestion) {
+        additionalFn(currentQuestion) {
             this.closeModalFn()
             this.additionalModal = true
             /*******/
-            let question = Number(curentQuestion) + Number(1)
+            let question = Number(currentQuestion) + Number(1)
             let btnName = 'TYK_Q' + question + '_AI_Button';
             gtag('event', 'tyk_journey', {
                 'button_name': btnName,
@@ -397,11 +398,11 @@ const app = Vue.createApp({
 
         },
 
-        referencesFn(curentQuestion) {
+        referencesFn(currentQuestion) {
             this.closeModalFn()
             this.referencesModal = true
             /****************/
-            let question = Number(curentQuestion) + Number(1)
+            let question = Number(currentQuestion) + Number(1)
             let btnName = 'TYK_Q' + question + '_REFERENCE_Button';
             gtag('event', 'tyk_journey', {
                 'button_name': btnName,
@@ -441,16 +442,16 @@ const app = Vue.createApp({
             this.closeModalFn()
         },
 
-        nextQuestionFn(curentQuestion) {
+        nextQuestionFn(currentQuestion) {
             this.qOpacity = true
-            if (this.questionsList.length == curentQuestion + 1) {
+            if (this.questionsList.length == currentQuestion + 1) {
                 setTimeout(() => {
                     this.questionFinish = true
                     this.supportInfo = false
                     this.questionStatus = false
                     this.qOpacity = false
                     /****************/
-                    let question = Number(curentQuestion) + Number(1)
+                    let question = Number(currentQuestion) + Number(1)
                     let btnName = 'TYK_Q' + question + '_RESULTS_Button';
                     gtag('event', 'tyk_journey', {
                         'button_name': btnName,
@@ -475,14 +476,14 @@ const app = Vue.createApp({
             } else {
                 setTimeout(() => {
                     this.qOpacity = false
-                    this.curentQuestion = Number(curentQuestion) + 1
+                    this.currentQuestion = Number(currentQuestion) + 1
                     this.supportInfo = false
                     this.questionStatus = true
-                    this.leftCountQiestion = this.questionsList.length - this.curentQuestion - 1
-                    this.curentQuestionData = this.questionsList[curentQuestion + 1].controlBaseData
-                    this.curentQuestionPosition = this.questionsList[curentQuestion + 1].basePosPersent
+                    this.leftCountQuestion = this.questionsList.length - this.currentQuestion - 1
+                    this.currentQuestionData = this.questionsList[currentQuestion + 1].controlBaseData
+                    this.currentQuestionPosition = this.questionsList[currentQuestion + 1].basePosPerсent
                     /*******/
-                    let question = Number(curentQuestion) + Number(1)
+                    let question = Number(currentQuestion) + Number(1)
                     let btnName = 'TYK_Q' + question + '_NEXT_Button';
                     gtag('event', 'tyk_journey', {
                         'button_name': btnName,
@@ -523,23 +524,23 @@ const app = Vue.createApp({
             }
         },
         sFinishUpdateTouch(event) {
-            let curentPos = event.touches[0].clientX;
-            this.slFinishUpdate(curentPos)
+            let currentPos = event.touches[0].clientX;
+            this.slFinishUpdate(currentPos)
         },
         sFinishUpdateMous(event) {
-            let curentPos = event.clientX;
-            this.slFinishUpdate(curentPos)
+            let currentPos = event.clientX;
+            this.slFinishUpdate(currentPos)
         },
-        slFinishUpdate(curentPos) {
+        slFinishUpdate(currentPos) {
             var widthCss = 1000;
             if (this.slFinishStatus == true) {
                 let obj = this.$refs['controlF']
                 let objSet = obj.getBoundingClientRect()
                 let posStart = objSet.x
                 let posFinish = Number(posStart) + Number(widthCss);
-                if (curentPos < posStart || curentPos > posFinish) {
+                if (currentPos < posStart || currentPos > posFinish) {
                 } else {
-                    this.slFinishLeft = curentPos - posStart;
+                    this.slFinishLeft = currentPos - posStart;
 
                 }
             }
@@ -676,7 +677,7 @@ const app = Vue.createApp({
             this.startPull = false
             this.questionFinish = false
             this.pageEnd = false;
-            this.curentQuestion = 0
+            this.currentQuestion = 0
             this.questionStatus = true
             this.slFinishLeft = 500,
                 this.leftCountQiestion = 3

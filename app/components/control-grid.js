@@ -3,7 +3,7 @@ app.component('control-grid-day', {
    // props: ['dd'],
     data() {
         return {
-         
+
         }
     },
     template: `      
@@ -30,16 +30,16 @@ app.component('control-grid-day', {
     `
 })
 
-app.component('control-grid-persent', {
+app.component('control-grid-percent', {
     // props: ['dd'],
      data() {
          return {
-          
+
          }
      },
      template: `      
          <transition name="controlGrid">
-             <div class="control-grid-holder control-grid-persent">                                                       
+             <div class="control-grid-holder control-grid-percent">                                                       
                  <div class="control-grid-item control-grid-item-0"><span>0</span></div>
                  <div class="control-grid-item control-grid-item-1"><span>10</span></div>
                  <div class="control-grid-item control-grid-item-2"><span>20</span></div>
@@ -60,7 +60,7 @@ app.component('control-grid-persent', {
     // props: ['dd'],
      data() {
          return {
-          
+
          }
      },
      template: `      
@@ -81,4 +81,3 @@ app.component('control-grid-persent', {
          </transition>
      `
  })
- 

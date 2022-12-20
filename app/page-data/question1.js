@@ -18,10 +18,21 @@ window.Q1 = {
     indicatorGrid: '15',
     basePosPercent: '0',
     correctPosPercent: '0.17',
-    reference: `   <ol>
+    references: `   <ol>
         <li><span>Sandborn WJ, et al. <em>N Engl J Med.</em> 2017;376:1723–1736.</span></li>
         <li><span>Sandborn WJ, et al. <em>N Engl J Med.</em> 2017;376:1723–1736 [Supplementary appendix].</span></li>
         <li><span>Hanauer S, et al. <em>Clin Gastroenterol Hepatol.</em> 2019;17:139–147.</span></li>
         <li><span>XELJANZ (tofacitinib citrate) Summary of Product Characteristics. Brussels, Belgium: Pfizer Ltd; July 2022.</span></li>
     </ol> `,
+    supportInfo: ` <ul>
+        <li><strong>Primary endpoint:</strong> remission<sup>a</sup> rates at week 8 for XELJANZ 10 mg BID vs placebo by prior TNFi exposure at baseline:<sup>1,2</sup>
+            <ul>
+                <li>Total population:<sup>b</sup> 18% vs 6%, respectively</li>
+                <li>TNFi-naïve patients: (OCTAVE Induction 1) <br/>25% vs 16%, respectively; (OCTAVE Induction 2) 22% vs 9%, respectively</li>
+                <li>Patients with prior TNFi failure: (OCTAVE Induction 1) 11% vs 2%, respectively; (OCTAVE Induction 2) 12% vs 0%, respectively</li>
+            </ul>
+        </li>
+        <li>XELJANZ demonstrated rapid onset, significantly reducing stool frequency<sup>c</sup> and rectal bleeding<sup>d</sup> in as early as 3 days in a post hoc analysis<sup>e</sup> of two phase 3 induction studies<sup>3</sup></li>
+        <li>Post hoc analysis<sup>e</sup> in OCTAVE Induction 1 and 2: daily bowel movement data were collected from patients to calculate the Mayo stool frequency and rectal bleeding subscores. For post hoc analyses, baseline values for Mayo subscores were derived using average data from 3 of the   5 days before first dose. Change from baseline was determined based on diary data for each day during the first 15 days of therapy<sup>3</sup></li>        
+    </ul>`,
 }

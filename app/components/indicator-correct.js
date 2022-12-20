@@ -3,38 +3,38 @@ app.component('indicator-correct', {
     props: ['item'],
    data() {
        return {
-        statusControl: false, 
-        widthIndicator: 882, 
-        indicatorGrid: this.item.indicatorGrid,           
-        basePosPersent: this.item.corectPosPersent,  
+        statusControl: false,
+        widthIndicator: 882,
+        indicatorGrid: this.item.indicatorGrid,
+        basePosPercent: this.item.correctPosPercent,
         startSectorPainted: 2000,
         sectorPainted: 0,
-        isActive: false,    
+        isActive: false,
         controlLeft: 0,
-        controlTop: 0, 
-        
+        controlTop: 0,
+
        }
    },
    mounted() {
        this.startPos()
-     }, 
+     },
    methods: {
-        startPos() {            
-            var widthCss = this.widthIndicator; 
-            this.controlLeft = widthCss * this.basePosPersent;         
-            this.sectorPainted = sectorPaintedFN(this.controlLeft, widthCss, this.startSectorPainted) 
-            this.controlTop = controlTopFN(this.controlLeft, widthCss);            
+        startPos() {
+            var widthCss = this.widthIndicator;
+            this.controlLeft = widthCss * this.basePosPercent;
+            this.sectorPainted = sectorPaintedFN(this.controlLeft, widthCss, this.startSectorPainted)
+            this.controlTop = controlTopFN(this.controlLeft, widthCss);
         },
-        editorGridSize() {   
+        editorGridSize() {
             if(this.curentGridSize == '%'){
-                return this.curentGridSize    
+                return this.curentGridSize
             } else if(this.curentGridSize == 'day' || this.curentGridSize == 'year'){
                 if(this.item.controlBaseData == '1'){
-                    return ' ' + this.curentGridSize  
+                    return ' ' + this.curentGridSize
                 } else {
-                    return ' ' + this.curentGridSize + 's'   
-                }           
-            }            
+                    return ' ' + this.curentGridSize + 's'
+                }
+            }
         },
     },
     template: `      
@@ -57,17 +57,16 @@ app.component('indicator-correct', {
            <div class="control-w controlCorrect-w"  >
                <div class="control" v-bind:style="{ left: controlLeft + 'px', top: controlTop + 'px'}"></div>
            </div>
-           <div class="control-curent-data" >
+           <div class="control-current-data" >
                 <template v-if="item.id == 1"> 
-                    <div class="data">{{ item.indicatorCorect }}</div>
+                    <div class="data">{{ item.indicatorCorrect }}</div>
                 </template>
                 <template v-else> 
-                    <div class="data">{{ item.indicatorCorect }}</div>
+                    <div class="data">{{ item.indicatorCorrect }}</div>
                 </template>
-                <p v-html="item.ansverText"></p>
-                <div class="ansver-icon-check"><span>Correct answer</span></div>   
+                <p v-html="item.answerText"></p>
+                <div class="answer-icon-check"><span>Correct answer</span></div>   
             </div>
        </div>
     `
 })
- 

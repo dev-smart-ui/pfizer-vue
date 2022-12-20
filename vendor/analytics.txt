@@ -338,3 +338,4 @@ lider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
 12/20/2022 09:26:41 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
 12/20/2022 09:26:44 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
 12/20/2022 09:26:46 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/20/2022 01:43:45 PM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver

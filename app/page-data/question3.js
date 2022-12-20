@@ -16,7 +16,7 @@ UC, ulcerative colitis.
     indicatorGrid: '10',
     basePosPercent: '0',
     correctPosPercent: '0.81',
-    reference: `<ol>
+    references: `<ol>
     <li><span>Sandborn WJ, et al. <em>Am J Gastroenterol.</em> 2021;116:S360. Abstract S777.</span></li>
     <li><span>Burmester GR, et al. <em>RMD Open.</em> 2021;7:e001595.</span></li>
     <li><span>Sandborn WJ, et al. <em>Clin Gastroenterol Hepatol.</em> 2022;20:591–601.e8.</span></li>
@@ -26,4 +26,8 @@ UC, ulcerative colitis.
     <li><span>Ytterberg SR, et al. <em>N Engl J Med.</em> 2022;386:316–326.</span></li>
     <li><span>Ytterberg SR, et al. <em>N Engl J Med.</em> 2022;386:316–326 [Supplementary appendix].</span></li>
  </ol>`,
+    supportInfo: `<ul>
+    <li>Across the XELJANZ clinical trial programme, XELJANZ offers up to      7.8 years of long-term safety data in UC (median exposure: 1.7 years)<sup>1,a</sup></li>
+    <li>Cohorts analysed were: phase 3 maintenance<br/> (592 patients receiving placebo, XELJANZ 5 mg, or 10 mg BID) and overall (1157 patients receiving XELJANZ 5 mg or 10 mg BID in phase 2/phase 3/OLE studies). Proportions and IRs (unique patients with events per 100 PY of exposure) were evaluated for AEs of special interest. OIs, malignancies, MACE, and gastrointestinal perforations were adjudicated<sup>1</sup></li>
+    </ul>`
 }
