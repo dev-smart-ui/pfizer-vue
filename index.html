@@ -1,0 +1,323 @@
+<html>
+    <head>
+        <title>TEST YOUR KNOWLEDGE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="app/assets/css/uikit.min.css" />
+
+        <link rel="stylesheet" href="app/assets/css/grid.css" />
+        <link rel="stylesheet" href="app/assets/css/theme.css" />
+        <link rel="stylesheet" href="app/assets/css/transition.css" />
+        <script src="app/vue3.js"></script>
+        <script src="app/axios.min.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id= G-000000000"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+
+            gtag('config', 'G-000000000');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-000000000');</script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-0000000" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="app"   class="uk-container uk-container-expand">
+            <div
+                @click="clickApp()"
+                @touchstart = "clickApp()"
+                @mousedown = "clickApp()"
+                @touchmove ="clickApp()"
+                @touchend = "clickApp()"
+                @mouseup = "clickApp()"
+            >
+                <Transition  name="front">
+                <div class="front-page"  v-if = 'front'>
+                    <section class="page-container">
+                        <div class="section-proportionately">
+                            <div class="page-content-holder front-page-container">
+                                <div class="front-page-content">
+                                    <div class="front-title"><h1 id="title">TEST YOUR KNOWLEDGE</h1></div>
+                                    <div class="front-btn">
+                                        <a href="javascript:void(0)" @click="loadApp()" class="btn btn-primary" >
+
+                                            <span>Start</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="front-image-man"></div>
+                                <div class="front-copiright"><p>Not an actual patient.</p></div>
+                                <div class="front-date"><p>August 2022. PP-XEL-GLB-1410</p></div>
+                                <div class="front-logo"><img src="app/assets/images/logo.png"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                </Transition>
+                <Transition  name="front">
+                <div class="end-page" v-if = 'pageEnd'>
+                    <section class="page-container">
+                        <div class="section-proportionately">
+                            <div class="page-content-holder end-page-container">
+                                <div class="end-page-content">
+                                    <div class="end-title"><p>Congratulations! </p></div>
+                                    <div class="end-sub-title"><p>You have successfully tested your knowledge of XELJANZ!</p></div>
+                                    <div class="end-block">
+                                        <p>
+                                            Interested in VISITING THE VIRTUAL BOOTH?<br>Scan the QR code below.
+                                        </p>
+                                        <div class="end-qr">
+                                            <img src="app/assets/images/qr-client.jpg">
+                                        </div>
+                                        <div class="end-btn-holder">
+                                            <div class="end-btn">
+                                                <a href="javascript:void(0)" @click="endApp()" class="btn btn-secondary" >
+                                                    <span>Close</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="end-image-wooman"></div>
+                                <div class="end-sitelink"><p><a href="/">www.pfizer.com</a></p></div>
+                                <div class="end-logo"><img src="app/assets/images/logo.png"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                </Transition>
+                <Transition name="page">
+                <div class="question-page" v-if = 'screen'>
+                    <section class="page-container">
+                        <div class="section-proportionately">
+                            <div class="page-content-holder ">
+                                <div class="q-line">
+                                    <p>{{ leftCountQiestion }}
+                                       <span v-if = 'leftCountQiestion == 1'>question remaining</span>
+                                       <span v-else>questions remaining</span>
+                                    </p>
+                                    <div class="q-line-holder">
+                                        <template v-for = "(item, index) in questionsList">
+                                            <template v-if="index <= curentQuestion">
+                                                <div class="item active"></div>
+                                            </template>
+                                            <template v-else><div class="item"></div></template>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="page-content" > <!-- -->
+                                    <div class="column-content">
+                                        <template v-if="questionFinish">
+                                            <div class="q-opacity" v-bind:class="{ opacity: qOpacity}">
+                                                <div class="f-title"><p><span style="color: #e30847;">Congratulations!</span><br/>You have successfully tested your knowledge of XELJANZ!</p></div>
+                                                <div class="f-midle-text"><p>My knowledge of XELJANZ has:</p></div>
+                                                <div class="f-control">
+                                                    <div class="f-control-holder">
+                                                        <div class="f-control-text">
+                                                            <p class="left">Not changed</p>
+                                                            <p class="center">Somewhat improved</p>
+                                                            <p class="right">Greatly improved</p>
+                                                        </div>
+                                                        <div class="sl-finish" ref="controlF" >
+                                                            <span class="sl-finish-nav"
+                                                            @touchstart = "sFinishEnter"
+                                                            @mousedown = "sFinishEnter"
+                                                            @touchmove ="sFinishUpdateTouch"
+                                                            @mousemove ="sFinishUpdateMous"
+                                                            @touchend = "sFinishLeave"
+                                                            @mouseup = "sFinishLeave"
+                                                            v-bind:style="{ left: slFinishLeft + 'px'}"
+                                                            v-bind:class="{ touchIn : slFinishStatus }"
+                                                            ></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="f-btn">
+                                                    <div class="btn-wrapper"><a href="javascript:void(0)" @click="finishPull()" class="btn btn-primary"><span>Finish</span></a> </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <template v-else>
+                                            <div class="q-opacity" v-bind:class="{ opacity: qOpacity}">
+                                                <div class="q-text q-title">
+                                                    <p v-html="questionsList[curentQuestion].title"></p>
+                                                </div>
+                                                <div class="q-inicator">
+                                                    <div class="q-control-holder">
+                                                        <Transition  name="fadeindicator">
+                                                            <div v-if="questionsList[curentQuestion].grid == 'control-grid-day'">
+                                                                <control-grid-day></control-grid-day>
+                                                            </div>
+                                                            <div v-else-if="questionsList[curentQuestion].grid == 'control-grid-persent'">
+                                                                <control-grid-persent></control-grid-persent>
+                                                            </div>
+                                                            <div v-else-if="questionsList[curentQuestion].grid == 'control-grid-years'">
+                                                                <control-grid-years></control-grid-years>
+                                                            </div>
+                                                        </Transition>
+                                                        <Transition  name="fadeindicator">
+                                                            <div v-if="questionStatus">
+                                                                <indicator ref="child1" @selected-data = 'selectedDataFn' :item = questionsList[curentQuestion] ></indicator>
+                                                            </div>
+                                                            <div v-else>
+                                                                <indicator-correct :item = questionsList[curentQuestion] ></indicator-correct>
+                                                            </div>
+                                                        </Transition>
+                                                    </div>
+                                                </div>
+                                                <div class="q-btn-holder">
+                                                    <Transition  name="fadebtn">
+                                                        <div  class="q-btn-wrapper" v-if="questionStatus">
+                                                            <div class="btn-wrapper"><a href="javascript:void(0)" @click="resetFn(curentQuestion)" class="btn btn-info"><span>Reset</span></a> </div>
+                                                            <div class="btn-wrapper"><a href="javascript:void(0)" @click="ansverFn(curentQuestion, controlSelectedData)" class="btn btn-primary"><span>View Answer</span></a> </div>
+                                                        </div>
+
+                                                        <div class="q-btn-wrapper" v-else>
+                                                            <div class="btn-wrapper btn-wrapper-ansver"><a href="javascript:void(0)" @click="additionalFn(curentQuestion)" class="btn btn-secondary"><span>Additional Information</span></a> </div>
+                                                            <div class="btn-wrapper btn-wrapper-ansver"><a href="javascript:void(0)" @click="nextQuestionFn(curentQuestion)" class="btn btn-primary"><span>Next Question</span></a> </div>
+                                                            <div class="q-correct">
+                                                                <p>Your answer</p>
+                                                                <span>{{ controlSelectedData }}{{ curentGridSize }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </Transition>
+                                                </div>
+                                                <div class="q-description">
+                                                    <template v-if="questionStatus">
+                                                        <p>{{ questionsList[curentQuestion].shortInfo }}</p>
+                                                    </template>
+                                                    <template v-else>
+                                                        <p v-html="questionsList[curentQuestion].baseDescription"></p>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="column-secondary-data" v-bind:class="{ active: supportInfo}">
+                                        <div class="q-bg">
+                                            <Transition  name="rBg">
+                                                <div v-if="curentQuestion == 0">
+                                                    <span class="q-bg-bg" style="background-image: url('app/assets/images/bq-q-1.png') ;"></span>
+                                                </div>
+                                            </Transition>
+                                            <Transition  name="rBg">
+                                            <div v-if="curentQuestion == 1">
+                                                <span class="q-bg-bg" style="background-image: url('app/assets/images/bq-q-2_4.png') ;"></span>
+                                            </div></Transition>
+                                            <Transition  name="rBg">
+                                            <div v-if="curentQuestion == 2">
+                                                <span class="q-bg-bg" style="background-image: url('app/assets/images/bq-q-3.png') ;"></span>
+                                            </div></Transition>
+                                            <Transition  name="rBg">
+                                            <div v-if="curentQuestion == 3">
+                                                <span class="q-bg-bg" style="background-image: url('app/assets/images/bq-q-2_4.png') ;"></span>
+                                            </div></Transition>
+                                            <Transition  name="rBg">
+                                            <div v-if="questionFinish">
+                                                <span class="q-bg-bg" style="background-image: url('app/assets/images/bq-q-1.png') ;"></span>
+                                            </div></Transition>
+                                        </div>
+                                        <div class="q-info" v-bind:class="{ active: supportInfo}" >
+                                            <supporting-info :id = questionsList[curentQuestion].id ></supporting-info>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                </Transition>
+                <Transition  name="navigation">
+                    <div v-if = "navigation" class="navigation">
+                        <div class="navigation-holder">
+                            <ul class="">
+                                <li><a href="javascript:void(0)" @click="startPullFn()" v-bind:class="{ active: startPull}"><span>Tip</span></a></li>
+                                <li><a href="javascript:void(0)" @click="studyDesignFn()" v-bind:class="{ active: pageStudyDesign}"><span>Study Design</span></a></li>
+                                <li><a href="javascript:void(0)" @click="safetyProfileFn()" v-bind:class="{ active: pageSafetyProfile}"><span>Safety Profile</span></a></li>
+                                <li v-if="questionFinish == false"><a href="javascript:void(0)" @click="referencesFn(curentQuestion)" v-bind:class="{ active: referencesModal}"><span>References</span></a></li>
+                                <li><a href="javascript:void(0)" @click="PIFn()" v-bind:class="{ active: pagePI}" ><span>PI</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </Transition>
+                <Transition  name="pageLogo">
+                    <div v-if = "pageLogo" class="page-logo"><a href="javascript:void(0)" @click="logoFn()"><img src="app/assets/images/logo.png"></a></div>
+                </Transition>
+                <Transition  name="fade">
+                    <div class="timer" v-if="timer" @click="hideTimer()">
+                        <div class="timer-holder">
+                            <div class="timer-content">
+                                <div class="timer-indicator"><span>{{ timerIndicator }}</span></div>
+                                <p @click="startTimerFn()">STILL HERE?</p>
+                                <div class="btn-wrapper"><a href="javascript:void(0)" @click="hideTimer()" class="btn btn-info"><span>Tap to continue</span></a> </div>
+                                <div class="btn-wrapper"><a href="javascript:void(0)" @click="reloadApp()" class="btn btn-info"><span>Exit session</span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </Transition>
+                <Transition  name="fade">
+                    <div class="start-pull" v-if="startPull" @click="loadPull()">
+                        <div class="start-pull-holder">
+                            <div class="start-pull-content" >
+                                <div class="icon"><span><img src="app/assets/images/icon-light.png"></span></div>
+                                <p>Slide button to select your answer.<br/>Press ‘VIEW ANSWER’ to see the results.</p>
+                                <div class="btn-wrapper"><a href="javascript:void(0)" @click="loadPull()" class="btn btn-info"><span>Tap anywhere to begin</span></a> </div>
+                                <div class="sl">
+                                    <span class="sl-nav" style="left: 150px;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Transition>
+                <Transition  name="fade">
+                    <div class="loading" v-if="loading"><div class="loading_round"><p>Loading</p></div></div>
+                </Transition>
+                <Transition  name="modal">
+                    <div class="modal" v-if="additionalModal">
+                        <div class="modal-holder">
+                            <div class="close" @click="closeAdditionalModalFn"><span></span></div>
+                            <additional-info :id = questionsList[curentQuestion].id></additional-info>
+                        </div>
+                    </div>
+                </Transition>
+                <div class="modal" v-if="referencesModal">
+                    <div class="modal-holder">
+                        <div class="close" @click="closeReferencesModalFn"><span></span></div>
+                        <references :id = questionsList[curentQuestion].id></references>
+                    </div>
+                </div>
+                <div class="modal" v-if = "pagesModal">
+                    <div class="modal-holder">
+                        <div class="close" @click="closePagesModalFn"><span></span></div>
+                        <study-design v-if = "pageStudyDesign"></study-design>
+                        <safety-profile v-if = "pageSafetyProfile"></safety-profile>
+                        <p-i v-if = "pagePI"></p-i>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- app -->
+        <script src="app/assets/js/function.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/components/control-grid.js"></script>
+        <script src="app/components/indicator.js"></script>
+        <script src="app/components/indicator-corect.js"></script>
+        <script src="app/components/control-support-info.js"></script>
+        <script src="app/components/additional-info.js"></script>
+        <script src="app/components/references.js"></script>
+        <script src="app/components/modal-pages.js"></script>
+        <script >
+            app.mount('#app')
+        </script>
+    </body>
+</html>

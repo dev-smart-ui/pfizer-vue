@@ -1,0 +1,184 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from{
+  opacity: 0;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-from,
+.fade-enter-to {opacity: 1;}
+/***********************************************/
+
+
+.navigation-enter-active,
+.navigation-leave-active {
+  transition: all 1.2s ease;
+}
+.navigation-enter-from{
+  opacity: 0; bottom: -10px;
+}
+.navigation-leave-to {
+  opacity: 0; bottom: -10px;
+}
+.navigation-leave-from,
+.navigation-enter-to {opacity: 1; bottom: 0px;}
+
+.pageLogo-enter-active,
+.pageLogo-leave-active {
+  transition: all 1.2s ease;
+}
+.pageLogo-enter-from{
+  opacity: 0; 
+}
+.pageLogo-leave-to {
+  opacity: 0; 
+}
+.pageLogo-leave-from,
+.pageLogo-enter-to {opacity: 1; }
+
+/*********  transition page indicator  **************/
+.fadeindicator-enter-active,
+.fadeindicator-leave-active {transition: all  0.4s ease;}
+.fadeindicator-enter-from{ opacity: 0; }
+.fadeindicator-enter-to{opacity: 1; }
+.fadeindicator-leave-from {opacity: 1;  }
+.fadeindicator-leave-to{opacity: 0; }
+/********/
+.title-enter-active,
+.title-leave-active {transition: all  3.5s ease;}
+.title-enter-from{ opacity: 0; }
+.title-enter-to{opacity: 1; }
+.title-leave-from {opacity: 1;  }
+.title-leave-to{opacity: 0; }
+/*********  transition btns  **************/
+.fadebtn-enter-active,
+.fadebtn-leave-active {
+  transition: opacity 0.6s ease;
+}
+.fadebtn-enter-from{
+  opacity: 0;
+ 
+}
+.fadebtn-leave-to {
+  opacity: 0;
+
+}
+.fadebtn-leave-from {opacity: 1;}
+.fadebtn-enter-to {opacity: 1;}
+/***********************************************/
+.support-enter-active,
+.support-leave-active {
+  transition: width 5.8s ease;
+}
+.support-enter-from{
+  width: 0%;
+}
+.support-leave-to {
+  width: 80%;
+}
+.support-leave-from,
+.support-enter-to {}
+/***********************************************/
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.6s ease;
+}
+.modal-enter-active .modal-holder,
+.modal-leave-active .modal-holder{
+  transition: all 0.5s ease;
+}
+
+.modal-enter-from{ 
+  opacity: 0;
+}
+.modal-enter-from .modal-holder{
+  top: 0%; opacity: 0;
+}
+.modal-leave-to {
+  opacity: 0; 
+}
+.modal-leave-to .modal-holder{
+  opacity: 0; top: 0%; 
+}
+
+.modal-leave-from,
+.modal-enter-to .modal-holder {opacity: 1;top: 13%;}
+/***********/
+.front-enter-active,
+.front-leave-active {
+  transition: all 0.8s ease;
+}
+
+.front-enter-from{
+  opacity: 0;
+}
+.front-leave-from { opacity: 1; }
+
+.front-leave-to {
+    opacity: 0;
+}
+.front-enter-to {opacity: 1;}
+
+/***********/
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s ease;
+}
+.page-leave-from { opacity: 1; }
+
+.page-leave-to {
+  opacity: 0;
+}
+.page-enter-from{
+  opacity: 0; 
+}
+.page-enter-to {opacity: 1; }
+/***********/
+.q3-enter-active,
+.q3-leave-active {
+  transition: all 0.5s ease;
+}
+.q3-leave-from {top: 60px; opacity: 1; }
+
+.q3-leave-to {
+  opacity: 0; top: 200px;
+}
+.q3-enter-from{
+  opacity: 0; 
+  top: 100px;
+}
+.q3-enter-to {opacity: 1;  top: 60px;}
+/***********/
+
+.rBg-enter-active,
+.rBg-leave-active {
+  transition: all 0.4s ease;
+}
+.rBg-leave-from { opacity: 1; }
+
+.rBg-leave-to {
+  opacity: 0;
+}
+.rBg-enter-from{
+  opacity: 0; 
+}
+.rBg-enter-to {opacity: 1; }
+
+/***********/
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 1s ease;
+}
+.scale-leave-from { }
+
+.scale-leave-to {
+ 
+}
+.scale-enter-from{transform: scale(0.3);
+
+}
+.scale-enter-to {transform: scale(1);}
+
