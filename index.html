@@ -10,14 +10,18 @@
     <link rel="stylesheet" href="app/assets/css/transition.css"/>
     <script src="app/vue3.js"></script>
     <script src="app/axios.min.js"></script>
-    <script src="app/page-data/question1.js"></script>
-    <script src="app/page-data/question2.js"></script>
-    <script src="app/page-data/question3.js"></script>
-    <script src="app/page-data/question4.js"></script>
-    <script src="app/page-data/modal-data/studyDesign.js"></script>
-    <script src="app/page-data/modal-data/safetyProfile.js"></script>
-    <script src="app/page-data/modal-data/PI.js"></script>
-    <script src="app/page-data/baseInfo.js"></script>
+    <script src="app/data/questions-data/Q1.js"></script>
+    <script src="app/data/questions-data/Q2.js"></script>
+    <script src="app/data/questions-data/Q3.js"></script>
+    <script src="app/data/questions-data/Q4.js"></script>
+    <script src="app/data/page-data/P1.js"></script>
+    <script src="app/data/page-data/P2.js"></script>
+    <script src="app/data/page-data/congratsPage.js"></script>
+    <script src="app/data/page-data/finishPage.js"></script>
+    <script src="app/data/modal-data/studyDesign.js"></script>
+    <script src="app/data/modal-data/safetyProfile.js"></script>
+    <script src="app/data/modal-data/PI.js"></script>
+    <script src="app/data/page-data/baseInfo.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id= G-000000000"></script>
 
@@ -71,17 +75,17 @@
                     <div class="section-proportionately">
                         <div class="page-content-holder front-page-container">
                             <div class="front-page-content">
-                                <div class="front-title"><h1>{{ baseInfo.mainTitle }}</h1></div>
+                                <div class="front-title"><h1>{{ page1.mainTitle }}</h1></div>
                                 <div class="front-btn">
                                     <a href="javascript:void(0)" @click="loadApp()" class="btn btn-primary">
 
-                                        <span>Start</span>
+                                        <span>{{page1.startBtn}}</span>
                                     </a>
                                 </div>
                             </div>
                             <div class="front-image-man"></div>
-                            <div class="front-copyright"><p>{{ baseInfo.actual }}</p></div>
-                            <div class="front-date"><p>{{ baseInfo.date }}</p></div>
+                            <div class="front-copyright"><p>{{ page1.actual }}</p></div>
+                            <div class="front-date"><p>{{ page1.date }}</p></div>
                             <div class="front-logo"><img src="app/assets/images/logo.png"></div>
                         </div>
                     </div>
@@ -94,24 +98,24 @@
                     <div class="section-proportionately">
                         <div class="page-content-holder end-page-container">
                             <div class="end-page-content">
-                                <div class="end-title"><p>{{ baseInfo.congratulations }}</p></div>
-                                <div class="end-sub-title"><p>{{ baseInfo.promise }}</p></div>
+                                <div class="end-title"><p>{{ pageCongrats.congratulations }}</p></div>
+                                <div class="end-sub-title"><p>{{ pageCongrats.promise }}</p></div>
                                 <div class="end-block">
-                                    <p v-html="baseInfo.qrCode"></p>
+                                    <p v-html="pageFinish.qrCode"></p>
                                     <div class="end-qr">
                                         <img src="app/assets/images/qr-client.jpg">
                                     </div>
                                     <div class="end-btn-holder">
                                         <div class="end-btn">
                                             <a href="javascript:void(0)" @click="endApp()" class="btn btn-secondary">
-                                                <span>Close</span>
+                                                <span>{{ pageFinish.closeBtn }}</span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="end-image-wooman"></div>
-                            <div class="end-sitelink"><p><a href="/">www.pfizer.com</a></p></div>
+                            <div class="end-sitelink"><p><a href="/">{{pageFinish.pfizerLink}}</a></p></div>
                             <div class="end-logo"><img src="app/assets/images/logo.png"></div>
                         </div>
                     </div>
@@ -143,14 +147,18 @@
                                 <div class="column-content">
                                     <template v-if="questionFinish">
                                         <div class="q-opacity" v-bind:class="{ opacity: qOpacity}">
-                                            <div class="f-title" v-html="baseInfo.allCongrats"></div>
-                                            <div class="f-middle-text"><p>{{ baseInfo.myKnowledge }}</p></div>
+                                            <div class="f-title">
+                                                <p>
+                                                    <span style="color: #e30847;">{{pageCongrats.congratulations}}</span><br/>{{pageCongrats.promise}}
+                                                </p>
+                                            </div>
+                                            <div class="f-middle-text"><p>{{ pageCongrats.myKnowledge }}</p></div>
                                             <div class="f-control">
                                                 <div class="f-control-holder">
                                                     <div class="f-control-text">
-                                                        <p class="left">{{baseInfo.notChanged}}</p>
-                                                        <p class="center">{{baseInfo.improved}}</p>
-                                                        <p class="right">{{baseInfo.greatImproved}}</p>
+                                                        <p class="left">{{pageCongrats.notChanged}}</p>
+                                                        <p class="center">{{pageCongrats.improved}}</p>
+                                                        <p class="right">{{pageCongrats.greatImproved}}</p>
                                                     </div>
                                                     <div class="sl-finish" ref="controlF">
                                                             <span class="sl-finish-nav"
@@ -169,7 +177,7 @@
                                             <div class="f-btn">
                                                 <div class="btn-wrapper"><a href="javascript:void(0)"
                                                                             @click="finishPull()"
-                                                                            class="btn btn-primary"><span>Finish</span></a>
+                                                                            class="btn btn-primary"><span>{{pageCongrats.finishBtn}}</span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -294,17 +302,17 @@
                 <div class="navigation-holder">
                     <ul class="">
                         <li><a href="javascript:void(0)" @click="startPullFn()"
-                               :class="{ active: startPull}"><span>{{ baseInfo.tip }}</span></a></li>
+                               :class="{ active: startPull}"><span>{{ page2.tip }}</span></a></li>
                         <li><a href="javascript:void(0)" @click="studyDesignFn()"
-                               :class="{ active: pageStudyDesign}"><span>{{ baseInfo.studyDesign }}</span></a></li>
+                               :class="{ active: pageStudyDesign}"><span>{{ page2.studyDesign }}</span></a></li>
                         <li><a href="javascript:void(0)" @click="safetyProfileFn()"
-                               :class="{ active: pageSafetyProfile}"><span>{{ baseInfo.safetyProfile }}</span></a></li>
+                               :class="{ active: pageSafetyProfile}"><span>{{ page2.safetyProfile }}</span></a></li>
                         <li v-if="questionFinish == false"><a href="javascript:void(0)"
                                                               @click="referencesFn(currentQuestion)"
-                                                              :class="{ active: referencesModal}"><span>{{ baseInfo.references }}</span></a>
+                                                              :class="{ active: referencesModal}"><span>{{ page2.references }}</span></a>
                         </li>
                         <li><a href="javascript:void(0)" @click="PIFn()"
-                               :class="{ active: pagePI}"><span>PI</span></a></li>
+                               :class="{ active: pagePI}"><span>{{ page2.pi }}</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -332,9 +340,9 @@
                 <div class="start-pull-holder">
                     <div class="start-pull-content">
                         <div class="icon"><span><img src="app/assets/images/icon-light.png"></span></div>
-                        <p v-html="baseInfo.slideToSelect"></p>
+                        <p v-html="page2.slideToSelect"></p>
                         <div class="btn-wrapper"><a href="javascript:void(0)" @click="loadPull()"
-                                                    class="btn btn-info"><span>{{ baseInfo.tapAnywhere }}</span></a></div>
+                                                    class="btn btn-info"><span>{{ page2.tapAnywhere }}</span></a></div>
                         <div class="sl">
                             <span class="sl-nav" style="left: 150px;"></span>
                         </div>
@@ -344,7 +352,7 @@
         </Transition>
         <Transition name="fade">
             <div class="loading" v-if="loading">
-                <div class="loading_round"><p>{{ baseInfo.loading }}</p></div>
+                <div class="loading_round"><p v-html="baseInfo.loading"></p></div>
             </div>
         </Transition>
         <Transition name="modal">

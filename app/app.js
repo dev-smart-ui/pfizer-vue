@@ -42,7 +42,11 @@ const app = Vue.createApp({
             /**********/
             navigation: false,
             pageLogo: false,
+            page1: window.P1,
+            page2: window.P2,
             baseInfo: window.BASE_INFO,
+            pageCongrats: window.P_CONGRATS,
+            pageFinish: window.P_FINISH,
         }
     },
     /*********************************************************************************/

@@ -339,3 +339,83 @@ lider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
 12/20/2022 09:26:44 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
 12/20/2022 09:26:46 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
 12/20/2022 01:43:45 PM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:36:52 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:37:00 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:37:05 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:37:07 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:37:12 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/21/2022 09:37:12 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 10
+12/21/2022 09:37:13 AM; event: tyk_journey; button_name: TYK_Q1_AI_Button; action: Click; value: 1
+12/21/2022 09:37:45 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:38:06 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:38:08 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:38:11 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/21/2022 09:38:11 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
+12/21/2022 09:38:13 AM; event: tyk_journey; button_name: TYK_Q1_NEXT_Button; action: Click; value: 1
+12/21/2022 09:38:15 AM; event: tyk_journey; button_name: TYK_Q2_ANSWER_Button; action: Click; value: 1
+12/21/2022 09:38:15 AM; event: tyk_answers; action: submit; question_name: Question Two; answer_type: Slider; answer_unit: percentage; answer_correct_value: 35; answer_input_value: 0
+12/21/2022 09:38:17 AM; event: tyk_journey; button_name: TYK_Q2_AI_Button; action: Click; value: 1
+12/21/2022 09:40:13 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 09:40:15 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 09:42:06 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:42:08 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:42:09 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 09:49:42 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:49:44 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 09:49:48 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 09:49:48 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:49:50 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 09:51:56 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 09:55:49 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 09:55:51 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 10:09:20 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 10:09:22 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 10:09:23 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 10:09:26 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 10:33:00 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 10:33:01 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 10:40:17 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 10:40:24 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 10:40:27 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 10:48:00 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 10:48:01 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 11:05:18 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 11:05:19 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: StudyDesign
+12/21/2022 11:06:05 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 11:06:07 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 11:06:10 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: StudyDesign
+12/21/2022 11:19:42 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 11:19:46 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 11:19:52 AM; event: tyk_journey; button_name: TYK_Q1_REFERENCE_Button; action: Click; value: 1
+12/21/2022 11:19:56 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: PrescriptionInformation
+12/21/2022 11:20:00 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: Tip
+12/21/2022 11:20:02 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: StudyDesign
+12/21/2022 11:22:00 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/21/2022 11:22:00 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 0
+12/21/2022 11:22:02 AM; event: tyk_journey; button_name: TYK_Q1_AI_Button; action: Click; value: 1
+12/21/2022 11:29:58 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: ScreenSaver
+12/21/2022 11:30:00 AM; event: tyk_journey; button_name: TYK_START_Button; action: Click; value: 1
+12/21/2022 11:30:06 AM; event: tyk_journey; button_name: TYK_Q1_RESET_Button; action: Click; value: 1
+12/21/2022 11:30:07 AM; event: tyk_journey; button_name: TYK_Q1_RESET_Button; action: Click; value: 1
+12/21/2022 11:30:08 AM; event: tyk_journey; button_name: TYK_Q1_RESET_Button; action: Click; value: 1
+12/21/2022 11:30:10 AM; event: tyk_journey; button_name: TYK_Q1_ANSWER_Button; action: Click; value: 1
+12/21/2022 11:30:10 AM; event: tyk_answers; action: submit; question_name: Question One; answer_type: Slider; answer_unit: days; answer_correct_value: 3; answer_input_value: 8
+12/21/2022 11:30:12 AM; event: tyk_journey; button_name: TYK_Q1_REFERENCE_Button; action: Click; value: 1
+12/21/2022 11:30:13 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: SafetyProfile
+12/21/2022 11:30:15 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: StudyDesign
+12/21/2022 11:30:16 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: Tip
+12/21/2022 11:30:45 AM; event: tyk_journey; button_name: TYK_Q1_NEXT_Button; action: Click; value: 1
+12/21/2022 11:30:48 AM; event: tyk_journey; button_name: TYK_Q2_ANSWER_Button; action: Click; value: 1
+12/21/2022 11:30:48 AM; event: tyk_answers; action: submit; question_name: Question Two; answer_type: Slider; answer_unit: percentage; answer_correct_value: 35; answer_input_value: 43
+12/21/2022 11:30:52 AM; event: tyk_journey; button_name: TYK_Q2_AI_Button; action: Click; value: 1
+12/21/2022 11:31:00 AM; event: tyk_journey; button_name: TYK_Q2_NEXT_Button; action: Click; value: 1
+12/21/2022 11:31:03 AM; event: tyk_journey; button_name: TYK_Q3_ANSWER_Button; action: Click; value: 1
+12/21/2022 11:31:03 AM; event: tyk_answers; action: submit; question_name: Question Three; answer_type: Slider; answer_unit: years; answer_correct_value: 7,8; answer_input_value: 0
+12/21/2022 11:31:06 AM; event: tyk_journey; button_name: TYK_Q3_NEXT_Button; action: Click; value: 1
+12/21/2022 11:31:08 AM; event: tyk_journey; button_name: TYK_Q4_ANSWER_Button; action: Click; value: 1
+12/21/2022 11:31:08 AM; event: tyk_answers; action: submit; question_name: Question Four; answer_type: Slider; answer_unit: percentage; answer_correct_value: 83; answer_input_value: 0
+12/21/2022 11:31:11 AM; event: tyk_journey; button_name: TYK_Q4_RESULTS_Button; action: Click; value: 1
+12/21/2022 11:31:14 AM; event: tyk_journey; button_name: TYK_FINISH_Button; action: Click; value: 1
+12/21/2022 11:31:14 AM; event: tyk_screen_view; app_name: TYK UEG; screen_name: Congratulation
+12/21/2022 11:31:14 AM; event: tyk_answers; action: submit; question_name: Questionnair Results; answer_type: Option; answer_unit: Selection; answer_correct_value: N/A; answer_input_value: Greatly improved
+12/21/2022 11:31:20 AM; event: tyk_journey; button_name: TYK_CLOSE_SESSION_Button; action: Click; value: 1
