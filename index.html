@@ -14,6 +14,10 @@
     <script src="app/page-data/question2.js"></script>
     <script src="app/page-data/question3.js"></script>
     <script src="app/page-data/question4.js"></script>
+    <script src="app/page-data/modal-data/studyDesign.js"></script>
+    <script src="app/page-data/modal-data/safetyProfile.js"></script>
+    <script src="app/page-data/modal-data/PI.js"></script>
+    <script src="app/page-data/baseInfo.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id= G-000000000"></script>
 
@@ -67,7 +71,7 @@
                     <div class="section-proportionately">
                         <div class="page-content-holder front-page-container">
                             <div class="front-page-content">
-                                <div class="front-title"><h1 id="title">TEST YOUR KNOWLEDGE</h1></div>
+                                <div class="front-title"><h1>{{ baseInfo.mainTitle }}</h1></div>
                                 <div class="front-btn">
                                     <a href="javascript:void(0)" @click="loadApp()" class="btn btn-primary">
 
@@ -76,8 +80,8 @@
                                 </div>
                             </div>
                             <div class="front-image-man"></div>
-                            <div class="front-copyright"><p>Not an actual patient.</p></div>
-                            <div class="front-date"><p>August 2022. PP-XEL-GLB-1410</p></div>
+                            <div class="front-copyright"><p>{{ baseInfo.actual }}</p></div>
+                            <div class="front-date"><p>{{ baseInfo.date }}</p></div>
                             <div class="front-logo"><img src="app/assets/images/logo.png"></div>
                         </div>
                     </div>
@@ -90,13 +94,10 @@
                     <div class="section-proportionately">
                         <div class="page-content-holder end-page-container">
                             <div class="end-page-content">
-                                <div class="end-title"><p>Congratulations! </p></div>
-                                <div class="end-sub-title"><p>You have successfully tested your knowledge of
-                                    XELJANZ!</p></div>
+                                <div class="end-title"><p>{{ baseInfo.congratulations }}</p></div>
+                                <div class="end-sub-title"><p>{{ baseInfo.promise }}</p></div>
                                 <div class="end-block">
-                                    <p>
-                                        Interested in VISITING THE VIRTUAL BOOTH?<br>Scan the QR code below.
-                                    </p>
+                                    <p v-html="baseInfo.qrCode"></p>
                                     <div class="end-qr">
                                         <img src="app/assets/images/qr-client.jpg">
                                     </div>
@@ -124,8 +125,8 @@
                         <div class="page-content-holder ">
                             <div class="q-line">
                                 <p>{{ leftCountQuestion }}
-                                    <span v-if='leftCountQuestion == 1'>question remaining</span>
-                                    <span v-else>questions remaining</span>
+                                    <span v-if='leftCountQuestion == 1'>{{baseInfo.questionRemaining}}</span>
+                                    <span v-else>{{baseInfo.questionRemaining}}</span>
                                 </p>
                                 <div class="q-line-holder">
                                     <template v-for="(item, index) in questionsList">
@@ -142,16 +143,14 @@
                                 <div class="column-content">
                                     <template v-if="questionFinish">
                                         <div class="q-opacity" v-bind:class="{ opacity: qOpacity}">
-                                            <div class="f-title"><p><span
-                                                    style="color: #e30847;">Congratulations!</span><br/>You have
-                                                successfully tested your knowledge of XELJANZ!</p></div>
-                                            <div class="f-middle-text"><p>My knowledge of XELJANZ has:</p></div>
+                                            <div class="f-title" v-html="baseInfo.allCongrats"></div>
+                                            <div class="f-middle-text"><p>{{ baseInfo.myKnowledge }}</p></div>
                                             <div class="f-control">
                                                 <div class="f-control-holder">
                                                     <div class="f-control-text">
-                                                        <p class="left">Not changed</p>
-                                                        <p class="center">Somewhat improved</p>
-                                                        <p class="right">Greatly improved</p>
+                                                        <p class="left">{{baseInfo.notChanged}}</p>
+                                                        <p class="center">{{baseInfo.improved}}</p>
+                                                        <p class="right">{{baseInfo.greatImproved}}</p>
                                                     </div>
                                                     <div class="sl-finish" ref="controlF">
                                                             <span class="sl-finish-nav"
@@ -186,8 +185,8 @@
                                                         <div v-if="questionsList[currentQuestion].grid == 'control-grid-day'">
                                                             <control-grid-day></control-grid-day>
                                                         </div>
-                                                        <div v-else-if="questionsList[currentQuestion].grid == 'control-grid-persent'">
-                                                            <control-grid-persent></control-grid-persent>
+                                                        <div v-else-if="questionsList[currentQuestion].grid == 'control-grid-percent'">
+                                                            <control-grid-percent></control-grid-percent>
                                                         </div>
                                                         <div v-else-if="questionsList[currentQuestion].grid == 'control-grid-years'">
                                                             <control-grid-years></control-grid-years>
@@ -210,11 +209,11 @@
                                                     <div class="q-btn-wrapper" v-if="questionStatus">
                                                         <div class="btn-wrapper"><a href="javascript:void(0)"
                                                                                     @click="resetFn(currentQuestion)"
-                                                                                    class="btn btn-info"><span>Reset</span></a>
+                                                                                    class="btn btn-info"><span>{{baseInfo.resetBtn}}</span></a>
                                                         </div>
                                                         <div class="btn-wrapper"><a href="javascript:void(0)"
                                                                                     @click="answerFn(currentQuestion, controlSelectedData)"
-                                                                                    class="btn btn-primary"><span>View Answer</span></a>
+                                                                                    class="btn btn-primary"><span>{{ baseInfo.viewAnswerBtn }}</span></a>
                                                         </div>
                                                     </div>
 
@@ -222,15 +221,15 @@
                                                         <div class="btn-wrapper btn-wrapper-answer"><a
                                                                 href="javascript:void(0)"
                                                                 @click="additionalFn(currentQuestion)"
-                                                                class="btn btn-secondary"><span>Additional Information</span></a>
+                                                                class="btn btn-secondary"><span>{{ baseInfo.addInfoBtn }}</span></a>
                                                         </div>
                                                         <div class="btn-wrapper btn-wrapper-answer"><a
                                                                 href="javascript:void(0)"
                                                                 @click="nextQuestionFn(currentQuestion)"
-                                                                class="btn btn-primary"><span>Next Question</span></a>
+                                                                class="btn btn-primary"><span>{{ baseInfo.nextQuestionBtn }}</span></a>
                                                         </div>
                                                         <div class="q-correct">
-                                                            <p>Your answer</p>
+                                                            <p>{{ baseInfo.yourAnswer }}</p>
                                                             <span>{{ controlSelectedData }}{{ currentGridSize }}</span>
                                                         </div>
                                                     </div>
@@ -295,14 +294,14 @@
                 <div class="navigation-holder">
                     <ul class="">
                         <li><a href="javascript:void(0)" @click="startPullFn()"
-                               :class="{ active: startPull}"><span>Tip</span></a></li>
+                               :class="{ active: startPull}"><span>{{ baseInfo.tip }}</span></a></li>
                         <li><a href="javascript:void(0)" @click="studyDesignFn()"
-                               :class="{ active: pageStudyDesign}"><span>Study Design</span></a></li>
+                               :class="{ active: pageStudyDesign}"><span>{{ baseInfo.studyDesign }}</span></a></li>
                         <li><a href="javascript:void(0)" @click="safetyProfileFn()"
-                               :class="{ active: pageSafetyProfile}"><span>Safety Profile</span></a></li>
+                               :class="{ active: pageSafetyProfile}"><span>{{ baseInfo.safetyProfile }}</span></a></li>
                         <li v-if="questionFinish == false"><a href="javascript:void(0)"
                                                               @click="referencesFn(currentQuestion)"
-                                                              :class="{ active: referencesModal}"><span>References</span></a>
+                                                              :class="{ active: referencesModal}"><span>{{ baseInfo.references }}</span></a>
                         </li>
                         <li><a href="javascript:void(0)" @click="PIFn()"
                                :class="{ active: pagePI}"><span>PI</span></a></li>
@@ -319,10 +318,10 @@
                 <div class="timer-holder">
                     <div class="timer-content">
                         <div class="timer-indicator"><span>{{ timerIndicator }}</span></div>
-                        <p @click="startTimerFn()">STILL HERE?</p>
-                        <div class="btn-wrapper"><a href="javascript:void(0)" @click="hideTimer()" class="btn btn-info"><span>Tap to continue</span></a>
+                        <p @click="startTimerFn()">{{ baseInfo.stillHere }}</p>
+                        <div class="btn-wrapper"><a href="javascript:void(0)" @click="hideTimer()" class="btn btn-info"><span>{{baseInfo.tapToContinue}}</span></a>
                         </div>
-                        <div class="btn-wrapper"><a href="javascript:void(0)" @click="reloadApp()" class="btn btn-info"><span>Exit session</span></a>
+                        <div class="btn-wrapper"><a href="javascript:void(0)" @click="reloadApp()" class="btn btn-info"><span>{{baseInfo.exitSession}}</span></a>
                         </div>
                     </div>
                 </div>
@@ -333,9 +332,9 @@
                 <div class="start-pull-holder">
                     <div class="start-pull-content">
                         <div class="icon"><span><img src="app/assets/images/icon-light.png"></span></div>
-                        <p>Slide button to select your answer.<br/>Press ‘VIEW ANSWER’ to see the results.</p>
+                        <p v-html="baseInfo.slideToSelect"></p>
                         <div class="btn-wrapper"><a href="javascript:void(0)" @click="loadPull()"
-                                                    class="btn btn-info"><span>Tap anywhere to begin</span></a></div>
+                                                    class="btn btn-info"><span>{{ baseInfo.tapAnywhere }}</span></a></div>
                         <div class="sl">
                             <span class="sl-nav" style="left: 150px;"></span>
                         </div>
@@ -345,7 +344,7 @@
         </Transition>
         <Transition name="fade">
             <div class="loading" v-if="loading">
-                <div class="loading_round"><p>Loading</p></div>
+                <div class="loading_round"><p>{{ baseInfo.loading }}</p></div>
             </div>
         </Transition>
         <Transition name="modal">

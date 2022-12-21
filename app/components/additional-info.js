@@ -1,37 +1,10 @@
-
-function aditionalListFn(id, title, content){
-return {id, title, content}
-}
-const aditionalList = [
-    aditionalListFn(
-     '',
-     '',
-     '',
- ),
- aditionalListFn(
-     '',
-     '',
-     '',
- ),
- aditionalListFn(
-     '',
-     '',
-     '',
- ),
- aditionalListFn(
-     '',
-     '',
-     'aditional4',
- ),
-]
-
 app.component('additional-info', {
   props: ['id'],
   data() {
       return {
          // additionalInfoList: aditionalList,
          additionalInfoList: [],
-         analiticSender: false,
+         analyticSender: false,
           data: {
               additional_id: '',
               additional_title: '',
@@ -47,19 +20,19 @@ app.component('additional-info', {
         let holderHeight = el.clientHeight
         let holderScrollTop = el.scrollTop
         let holderScrollHeight = el.scrollHeight
-        let scrolHolder = holderHeight + holderScrollTop           
+        let scrolHolder = holderHeight + holderScrollTop
         if(scrolHolder > holderScrollHeight - 100){
-            if(this.analiticSender == false){                
+            if(this.analyticSender == false){
                 let question = Number(this.id) + Number(1)
-                let btnName = 'TYK_Q' + question + '_AI_Scroll';          
+                let btnName = 'TYK_Q' + question + '_AI_Scroll';
                 gtag('event', 'tyk_journey', {
                 'button_name': btnName,
                 'action': 'Scroll',
                 'value': 1,
                 });
-                this.analiticSender = true
-            } 
-        } 
+                this.analyticSender = true
+            }
+        }
       },
       additionalInfo: function (){
           var th = this

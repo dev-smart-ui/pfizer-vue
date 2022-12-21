@@ -1,24 +1,24 @@
-
 app.component('indicator-correct', {
     props: ['item'],
-   data() {
-       return {
-        statusControl: false,
-        widthIndicator: 882,
-        indicatorGrid: this.item.indicatorGrid,
-        basePosPercent: this.item.correctPosPercent,
-        startSectorPainted: 2000,
-        sectorPainted: 0,
-        isActive: false,
-        controlLeft: 0,
-        controlTop: 0,
+    data() {
+        return {
+            statusControl: false,
+            widthIndicator: 882,
+            indicatorGrid: this.item.indicatorGrid,
+            basePosPercent: this.item.correctPosPercent,
+            startSectorPainted: 2000,
+            sectorPainted: 0,
+            isActive: false,
+            controlLeft: 0,
+            controlTop: 0,
+            baseInfo: window.BASE_INFO
 
-       }
-   },
-   mounted() {
-       this.startPos()
-     },
-   methods: {
+        }
+    },
+    mounted() {
+        this.startPos()
+    },
+    methods: {
         startPos() {
             var widthCss = this.widthIndicator;
             this.controlLeft = widthCss * this.basePosPercent;
@@ -26,10 +26,10 @@ app.component('indicator-correct', {
             this.controlTop = controlTopFN(this.controlLeft, widthCss);
         },
         editorGridSize() {
-            if(this.curentGridSize == '%'){
+            if (this.curentGridSize == '%') {
                 return this.curentGridSize
-            } else if(this.curentGridSize == 'day' || this.curentGridSize == 'year'){
-                if(this.item.controlBaseData == '1'){
+            } else if (this.curentGridSize == 'day' || this.curentGridSize == 'year') {
+                if (this.item.controlBaseData == '1') {
                     return ' ' + this.curentGridSize
                 } else {
                     return ' ' + this.curentGridSize + 's'
@@ -65,7 +65,7 @@ app.component('indicator-correct', {
                     <div class="data">{{ item.indicatorCorrect }}</div>
                 </template>
                 <p v-html="item.answerText"></p>
-                <div class="answer-icon-check"><span>Correct answer</span></div>   
+                <div class="answer-icon-check"><span>{{ baseInfo.correctAnswer }}</span></div>   
             </div>
        </div>
     `

@@ -42,6 +42,7 @@ const app = Vue.createApp({
             /**********/
             navigation: false,
             pageLogo: false,
+            baseInfo: window.BASE_INFO,
         }
     },
     /*********************************************************************************/
