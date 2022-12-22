@@ -12,6 +12,10 @@
     <script src="app/data/questions-data/Q2.js"></script>
     <script src="app/data/questions-data/Q3.js"></script>
     <script src="app/data/questions-data/Q4.js"></script>
+    <script src="app/data/additional-data/AD1.js"></script>
+    <script src="app/data/additional-data/AD2.js"></script>
+    <script src="app/data/additional-data/AD3.js"></script>
+    <script src="app/data/additional-data/AD4.js"></script>
     <script src="app/data/page-data/P1.js"></script>
     <script src="app/data/page-data/P2.js"></script>
     <script src="app/data/page-data/congratsPage.js"></script>
@@ -130,7 +134,7 @@
                             <div class="q-line">
                                 <p>{{ leftCountQuestion }}
                                     <span v-if='leftCountQuestion == 1'>{{baseInfo.questionRemaining}}</span>
-                                    <span v-else>{{baseInfo.questionRemaining}}</span>
+                                    <span v-else>{{baseInfo.questionRemaining}}s</span>
                                 </p>
                                 <div class="q-line-holder">
                                     <template v-for="(item, index) in questionsList">
@@ -359,7 +363,10 @@
             <div class="modal" v-if="additionalModal">
                 <div class="modal-holder">
                     <div class="close" @click="closeAdditionalModalFn"><span></span></div>
-                    <additional-info :id=questionsList[currentQuestion].id></additional-info>
+                    <additional-info-1 v-if="currentQuestion == 0" :id=questionsList[currentQuestion].id></additional-info-1>
+                    <additional-info-2 v-if="currentQuestion == 1" :id=questionsList[currentQuestion].id></additional-info-2>
+                    <additional-info-3 v-if="currentQuestion == 2" :id=questionsList[currentQuestion].id></additional-info-3>
+                    <additional-info-4 v-if="currentQuestion == 3" :id=questionsList[currentQuestion].id></additional-info-4>
                 </div>
             </div>
         </Transition>

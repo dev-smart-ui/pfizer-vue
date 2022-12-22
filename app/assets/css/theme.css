@@ -515,8 +515,8 @@ body{color: #000;font-family: 'Arial', sans-serif; font-family: 'Klavika-Regular
 .modal .content ol li em{color: #000;}
 
 
-.modal-images{clear: both;    margin: 20px -10px 20px;overflow: hidden;padding: 5px 15px;}
-.modal-img{}
+.modal-images{clear: both; /*margin: 20px -10px 20px;*/ overflow: hidden;padding: 5px 15px;}
+/*.modal-img{}*/
 .left .modal-img{padding-right: 7px;}
 .right .modal-img{padding-left: 7px;}
 .modal-img img{box-shadow: 1px 1px 5px #838181;}
