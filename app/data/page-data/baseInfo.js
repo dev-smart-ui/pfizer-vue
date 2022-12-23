@@ -1,5 +1,6 @@
 window.BASE_INFO = {
   questionRemaining: "question remaining",
+  questionsRemaining: "questions remaining",
   resetBtn: "Reset",
   viewAnswerBtn: "View Answer",
   addInfoBtn: "Additional Information",
