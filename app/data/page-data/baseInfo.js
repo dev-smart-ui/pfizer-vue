@@ -12,4 +12,8 @@ window.BASE_INFO = {
   exitSession: "Exit session",
   loading: "Loading",
   correctAnswer: "Correct answer",
+  day: "day",
+  year: "year",
+  days: "days",
+  years: "years",
 };
