@@ -15,6 +15,7 @@ app.component("indicator", {
       currentGridSize: this.item.gridSize,
 
       dimX: "",
+      data: window.BASE_INFO,
     };
   },
   mounted() {
